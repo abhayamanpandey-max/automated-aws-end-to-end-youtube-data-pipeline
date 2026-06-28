@@ -13,7 +13,7 @@ An enterprise-grade, serverless data engineering pipeline designed to ingest, tr
 ## Final Processed Output Dataset
 
 The final engineered and cleaned YouTube trending dataset can be viewed directly here:
-* 📊 [Cleaned YouTube Trending Data](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/cleaned_youtube_trending_data.csv.csv)
+* 📊 [Cleaned YouTube Trending Data](Automated-AWS-Project/cleaned_youtube_trending_data.csv.csv)
 
 ## 📊 Analytics Dashboard Layer (Streamlit)
 
@@ -40,13 +40,13 @@ This visualization maps the success path (Green trail) through the synchronous d
 ### 📸 Dashboard Screenshots
 
 #### 1. Key Performance Indicators & Category Analysis
-![Dashboard KPI and Categories](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/image/Dashboard1.png.png)
+![Dashboard KPI and Categories](Automated-AWS-Project/image/Dashboard1.png.png)
 
 #### 2. Top Channels Analysis
-![Dashboard Top Channels](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/image/Dashboard2.png.png)
+![Dashboard Top Channels](Automated-AWS-Project/image/Dashboard2.png.png)
 
 #### 3. Viral Engagement Matrix & Raw Data Inspector
-![Dashboard Engagement Matrix](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/image/Dashboard3.png.png)
+![Dashboard Engagement Matrix](Automated-AWS-Project/image/Dashboard3.png.png)
 
 ---
 
@@ -91,11 +91,11 @@ Below are the verified execution logs of the state machine, demonstrating a flaw
 
 #### Execution Table View
 This shows the linear completion and data pass-through of every major state:
-![Execution Table](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/image/step_function_table.png.png)
+![Execution Table](Automated-AWS-Project/image/step_function_table.png.png)
 
 #### Execution Graph View
 This visualization maps the success path (Green trail) through the synchronous data processing and validation steps:
-![Execution Graph](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/image/step_function_graph.png.png)
+![Execution Graph](Automated-AWS-Project/image/step_function_graph.png.png)
 
 ## 🛠️ Repository Components
 
@@ -106,7 +106,7 @@ This visualization maps the success path (Green trail) through the synchronous d
 
 A cloud-native ETL pipeline that ingests YouTube trending video data across 10 regions, transforms it through a medallion architecture (Bronze > Silver > Gold), enforces data quality gates, and produces analytics-ready aggregations — all orchestrated by AWS Step Functions.
 
-![Pipeline Architecture](Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/image/YouTube%20Trending%20Data%20Pipeline.png)
+![Pipeline Architecture](Automated-AWS-Project/image/YouTube%20Trending%20Data%20Pipeline.png)
 
 ---
 
@@ -229,7 +229,7 @@ youtube-data-pipeline-2026/
 
 ### Bronze Layer (Raw Data)
 
-The ingestion Lambda (`Automated-youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/lambdas/ingestion_lambda.py`) fetches data from the YouTube Data API v3:
+The ingestion Lambda (`Automated-AWS-Project/lambdas/ingestion_lambda.py`) fetches data from the YouTube Data API v3:
 
 - **Trending videos** — top 50 trending videos per region
 - **Category mappings** — video category ID-to-name reference data
