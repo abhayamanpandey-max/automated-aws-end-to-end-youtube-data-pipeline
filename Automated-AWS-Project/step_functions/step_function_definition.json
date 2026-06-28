@@ -1,0 +1,70 @@
+{
+  "Comment": "YouTube Trending Data Pipeline Orchestration",
+  "StartAt": "Run Lambda Ingestion",
+  "States": {
+    "Run Lambda Ingestion": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:ap-south-1:344859353355:function:yt-data-pipeline-youtube-ingestion:$LATEST"
+      },
+      "Next": "Run PySpark ETL Job"
+    },
+    "Run PySpark ETL Job": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "yt-pipeline-bronze-to-silver"
+      },
+      "Next": "Run Category Reference Job"
+    },
+    "Run Category Reference Job": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "yt-reference-json-to-parquet"
+      },
+      "Next": "Run Glue Crawler"
+    },
+    "Run Glue Crawler": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::aws-sdk:glue:startCrawler",
+      "Parameters": {
+        "Name": "yt-silver-crawler"
+      },
+      "Next": "Wait For Crawler"
+    },
+    "Wait For Crawler": {
+      "Type": "Wait",
+      "Seconds": 60,
+      "Next": "Run Data Quality Check"
+    },
+    "Run Data Quality Check": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:ap-south-1:344859353355:function:yt-data-pipeline-youtube-ingestion:$LATEST"
+      },
+      "OutputPath": "$.Payload",
+      "Next": "Evaluate Quality Results"
+    },
+    "Evaluate Quality Results": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "Pipeline Success"
+        }
+      ],
+      "Default": "Mark Execution Failed"
+    },
+    "Mark Execution Failed": {
+      "Type": "Fail",
+      "Cause": "The pipeline failed data quality checks."
+    },
+    "Pipeline Success": {
+      "Type": "Succeed"
+    }
+  }
+}

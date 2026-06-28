@@ -1,0 +1,8 @@
+# Large video file - hosted on YouTube instead
+*.mp4
+
+# Virtual environment
+.venv/
+
+# Large historical CSV datasets - not needed in repo
+Automated-AWS-Project/data/*.csv
