@@ -26,13 +26,13 @@ It consumes the optimized, consumption-ready data (Gold Layer) generated from th
 ### 📸 Dashboard Screenshots
 
 #### 1. Key Performance Indicators & Category Analysis
-![Dashboard KPI and Categories](image/Dashboard1.png.png)
+![Dashboard KPI and Categories](image/Dashboard1.png)
 
 #### 2. Top Channels Analysis
-![Dashboard Top Channels](image/Dashboard2.png.png)
+![Dashboard Top Channels](image/Dashboard2.png)
 
 #### 3. Viral Engagement Matrix & Raw Data Inspector
-![Dashboard Engagement Matrix](image/Dashboard3.png.png)
+![Dashboard Engagement Matrix](image/Dashboard3.png)
 
 ---
 
@@ -60,7 +60,7 @@ Follow these steps to spin up the analytics interface on your local machine:
     Ensure your localized dataset cleaned_youtube_trending_data.csv.csv is present in your workspace     directory so that the load_data() function can read the cached Athena export successfully:
     ```bash
     #Inside app.py
-   df = pd.read_csv("cleaned_youtube_trending_data.csv.csv")
+   df = pd.read_csv("cleaned_youtube_trending_data.csv")
  6. **Launch the Dashboard:**
     ```bash
       streamlit run app.py
@@ -77,11 +77,11 @@ Below are the verified execution logs of the state machine, demonstrating a flaw
 
 #### Execution Table View
 This shows the linear completion and data pass-through of every major state:
-![Execution Table](image/step_function_table.png.png)
+![Execution Table](image/step_function_table.png)
 
 #### Execution Graph View
 This visualization maps the success path (Green trail) through the synchronous data processing and validation steps:
-![Execution Graph](image/step_function_graph.png.png)
+![Execution Graph](image/step_function_graph.png)
 
 ## 🛠️ Repository Components
 
