@@ -54,8 +54,6 @@ To validate system reliability, efficiency, and cloud storage optimization, the 
 
 ## 🖥️ Streamlit Analytics Dashboard Presentation
 
-## 📊 Dashboard
-
 | KPIs & Category Analysis | Top Channels | Viral Engagement Matrix |
 |:---:|:---:|:---:|
 | ![](Automated-AWS-Project/image/Dashboard1.png) | ![](Automated-AWS-Project/image/Dashboard2.png) | ![](Automated-AWS-Project/image/Dashboard3.png) |
