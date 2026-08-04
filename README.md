@@ -4,7 +4,7 @@ An enterprise-grade, serverless data engineering pipeline that ingests live YouT
 
 ---
 
-## 🎥 Demo
+##  Demo
 
 [![Watch the demo](https://img.youtube.com/vi/OB1Nv6EgMsM/maxresdefault.jpg)](https://youtu.be/OB1Nv6EgMsM)
 
@@ -12,7 +12,7 @@ An enterprise-grade, serverless data engineering pipeline that ingests live YouT
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ![Pipeline Architecture](Automated-AWS-Project/image/YouTube%20Trending%20Data%20Pipeline.png)
 
@@ -39,7 +39,7 @@ YouTube API v3 / Kaggle
 **Scheduling:** Amazon EventBridge (runs every 6 hours)
 
 ---
-## 📊 Pipeline Performance & Media Analytics
+##  Pipeline Performance & Media Analytics
 
 To validate system reliability, efficiency, and cloud storage optimization, the pipeline tracks the following core operational and performance metrics:
 
@@ -52,7 +52,7 @@ To validate system reliability, efficiency, and cloud storage optimization, the 
 
 ---
 
-## 🖥️ Streamlit Analytics Dashboard Presentation
+##  Streamlit Analytics Dashboard Presentation
 
 | KPIs & Category Analysis | Top Channels | Viral Engagement Matrix |
 |:---:|:---:|:---:|
@@ -60,7 +60,7 @@ To validate system reliability, efficiency, and cloud storage optimization, the 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -78,7 +78,7 @@ To validate system reliability, efficiency, and cloud storage optimization, the 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ├── Automated-AWS-Project/
@@ -108,7 +108,7 @@ To validate system reliability, efficiency, and cloud storage optimization, the 
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - AWS Account with Lambda, Glue, S3, Step Functions, SNS, IAM, Athena, EventBridge permissions
@@ -135,7 +135,7 @@ streamlit run app.py
 
 ---
 
-## 🟢 Pipeline Execution Evidence
+##  Pipeline Execution Evidence
 
 | Step Functions Execution Table | Execution Graph |
 |:---:|:---:|
